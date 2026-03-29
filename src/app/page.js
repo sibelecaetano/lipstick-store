@@ -3,14 +3,17 @@ import { products } from "@/data/products"
 
 export default function Home() {
   return (
-    <main>
-      <h1>Lipstick Store</h1>
+    <main className="max-w-6xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6">
+      Lipstick Store
+    </h1>
 
       {products.map((product) => (
         <ProductCard
           key={product.id}
           name={product.name}
           price={product.price}
+          image={product.image}
         />
       ))}
 

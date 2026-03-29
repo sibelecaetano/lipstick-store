@@ -1,8 +1,16 @@
-export default function ProductCard({ name, price }) {
+export default function ProductCard({ name, price, image }) {
     return (
-        <div>
-            <h2>{name}</h2>
-            <p> R$ {price}</p>
+        <div className="border p-4 rounded shadow hover:shadow-lg transition">
+            <img
+            src={image}
+            alt={name}
+            className="w-full h-48 object-cover mb-4 rounded"
+            />
+            <h2 className="mt-2 font-semibold">{name}</h2>
+            <p className="text-pink-600 font-bold"> R$ {price}</p>
+            <button className="mt-2 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">
+  Adicionar ao carrinho
+</button>
         </div>
     )
 }
