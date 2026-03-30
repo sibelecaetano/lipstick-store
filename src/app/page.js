@@ -1,24 +1,36 @@
-import ProductCard from "@/components/ProductCard"
+"use client";
+
+import { useState } from "react";
 import { products } from "@/data/products"
+import ProductCard from "@/components/ProductCard"
+import FilterBar from "@/components/FilterBar";
+
+
 
 export default function Home() {
+  const [selected, setSelected] = useState("Todos");
+
+  const filtered = selected === "Todos" 
+  ? products
+  : products.filter ((p) => p.category === selected);
+
   return (
-    <main className="max-w-6xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">
-      Lipstick Store
+    <main className="min-h-screen bg-pink-50 px-6 py-10">
+      <h1 className="text-center text-gray-500 mb-8">
+      Os melhores produtos para realçar sua beleza!
+      Descubra nossa seleção de batons, glosses e hidratantes labiais para um visual irresistível. Compre agora e arrase!
     </h1>
 
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          name={product.name}
-          price={product.price}
-          image={product.image}
-        />
-      ))}
 
+      <FilterBar selected={selected} onSelect={setSelected} />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {filtered.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </main>
-  )
+  );
 }
 
 //MAP(): MÉTODO DE ARRAY QUE PERMITE REPETIR OU PERCORRER ITENS DE UMA LISTA, EXECUTANDO UMA FUNÇÃO PARA CADA ITEM.

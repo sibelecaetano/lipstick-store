@@ -1,17 +1,25 @@
-export default function ProductCard({ name, price, image }) {
+export default function ProductCard({ product }) {
     return (
-        <div className="border p-4 rounded shadow hover:shadow-lg transition">
+        <div className="border p-4 rounded shadow flex flex-col">
+            {/*Exibe a imagem*/}
             <img
-            src={image}
-            alt={name}
-            className="w-full h-48 object-cover mb-4 rounded"
+            src={product.image}
+            alt={product.name}
+            className="max-h-full object-contain"
             />
-            <h2 className="mt-2 font-semibold">{name}</h2>
-            <p className="text-pink-600 font-bold"> R$ {price}</p>
+
+            {/*Exibe o texto*/}
+            <h2 className="mt-2 font-semibold">{product.name}</h2>
+
+            <p className="text-pink-600 font-bold"> R$ {product.price}</p>
+
+            {/*Botão de adicionar ao carrinho*/}
+
             <button className="mt-2 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">
-  Adicionar ao carrinho
-</button>
-        </div>
+            Adicionar ao carrinho
+            </button>
+
+            </div>
     )
 }
 //COMPONENTE DE PRODUTO, RECEBE PROPS DE NOME E PREÇO, E EXIBE ESSAS INFORMAÇÕES EM UM CARD.
