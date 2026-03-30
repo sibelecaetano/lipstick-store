@@ -1,26 +1,33 @@
 export default function ProductCard({ product }) {
-    return (
-        <div className="border p-4 rounded shadow flex flex-col">
-            {/*Exibe a imagem*/}
-            <img
-            src={product.image}
-            alt={product.name}
-            className="max-h-full object-contain"
-            />
+  return (
+    <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition p-4 flex flex-col">
 
-            {/*Exibe o texto*/}
-            <h2 className="mt-2 font-semibold">{product.name}</h2>
+      {/* imagem */}
+      <div className="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="max-h-full object-contain"
+        />
+      </div>
 
-            <p className="text-pink-600 font-bold"> R$ {product.price}</p>
+      {/* nome */}
+      <h2 className="font-medium text-gray-800">
+        {product.name}
+      </h2>
 
-            {/*Botão de adicionar ao carrinho*/}
+      {/* preço */}
+      <p className="text-pink-600 font-bold text-lg">
+        R$ {product.price}
+      </p>
 
-            <button className="mt-2 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">
-            Adicionar ao carrinho
-            </button>
+      {/* botão */}
+      <button className="mt-auto bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700 transition">
+        Adicionar ao carrinho
+      </button>
 
-            </div>
-    )
+    </div>
+  )
 }
 //COMPONENTE DE PRODUTO, RECEBE PROPS DE NOME E PREÇO, E EXIBE ESSAS INFORMAÇÕES EM UM CARD.
 //PROPS: DADOS QUE O COMPONENTE RECEBE DO PAI
