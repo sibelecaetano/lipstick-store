@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
         <img
           src={product.image}
           alt={product.name}
-          className="max-h-full object-contain"
+          className="ax-h-full object-contain cursor-pointer"
         />
       </div>
 
@@ -20,11 +20,6 @@ export default function ProductCard({ product }) {
       <p className="text-pink-600 font-bold text-lg">
         R$ {product.price}
       </p>
-
-      {/* botão */}
-      <button className="mt-auto bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700 transition">
-        Adicionar ao carrinho
-      </button>
 
     </div>
   )

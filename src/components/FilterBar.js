@@ -1,4 +1,4 @@
-const categories = ["Todos", "Batom", "Gloss", "Base"];
+const categories = ["Todos", "Mais vendidos", "Novidades", "Promoções"];
 
 export default function FilterBar({ selected, onSelect }) {
   return (

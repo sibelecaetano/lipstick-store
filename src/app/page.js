@@ -1,11 +1,16 @@
 "use client";
-
+import Breadcrumb from "@/components/Breadcrumb";
 import { useState } from "react";
 import { products } from "@/data/products"
 import ProductCard from "@/components/ProductCard"
 import FilterBar from "@/components/FilterBar";
 
-
+<Breadcrumb
+  items={[
+    { label: "Home", href: "/" },
+    { label: "Produtos" }
+  ]}
+/>
 
 export default function Home() {
   const [selected, setSelected] = useState("Todos");
@@ -18,9 +23,8 @@ export default function Home() {
     <main className="min-h-screen bg-pink-50 px-6 py-10">
       <h1 className="text-center text-gray-500 mb-8">
       Os melhores produtos para realçar sua beleza!
-      Descubra nossa seleção de batons, glosses e hidratantes labiais para um visual irresistível. Compre agora e arrase!
-    </h1>
-
+      </h1>
+    
 
       <FilterBar selected={selected} onSelect={setSelected} />
 

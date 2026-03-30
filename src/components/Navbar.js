@@ -21,7 +21,7 @@ export default function Navbar() {
 
             <nav className="hidden md:flex items-center gap-6">
               <button className="hover:text-pink-600">Batom</button>
-              <button className="hover:text-pink-600">Gloss</button>
+              <button className="hover:text-pink-600">Skincare</button>
               <button className="hover:text-pink-600">Hidratantes</button>
               <button className="text-red-500">Promoções</button>
             </nav>
