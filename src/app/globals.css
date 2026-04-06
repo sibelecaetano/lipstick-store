@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-800 font-sans antialiased;
+  }
+  
+  .dark body {
+    @apply bg-dark text-white;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  /* Container padrão da loja */
+  .shop-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Badge de categoria/tag */
+  .badge {
+    @apply inline-block bg-pink-100 text-pink-600 text-xs font-medium px-2 py-0.5 rounded-full;
+  }
+}
